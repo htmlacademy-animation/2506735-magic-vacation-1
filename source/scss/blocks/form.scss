@@ -89,7 +89,7 @@
 }
 
 .form__button {
-  margin-left: auto;
+  flex-grow: 1;
 
   @media (orientation: portrait) {
     position: relative;
