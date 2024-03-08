@@ -1,7 +1,7 @@
 .screen--game.active {
   .form__field {
-    padding: 0 5.6rem;
-    width: calc(100% - 21rem);
+    transform: scaleX(1);
+    transform-origin: right;
   }
 }
 
@@ -37,12 +37,11 @@
 }
 
 .form__field {
-  position: absolute;
-  right: 21rem;
   flex: none;
-  padding: 0;
+  margin-right: 3rem;
+  padding: 0 5.6rem;
   height: 6rem;
-  width: 0;
+  width: calc(100% - 21rem);
   text-transform: uppercase;
   font: inherit;
   font-size: 2.4rem;
@@ -51,7 +50,9 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
-  transition: width 0.5s ease-in-out 0.2s, padding 0.3s ease 0.2s;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s linear;
 
   &:focus {
     border: 1px solid $c-purple;
