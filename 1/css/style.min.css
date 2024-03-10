@@ -1415,8 +1415,8 @@ img {
 }
 
 .screen--game.active .form__field {
-  padding: 0 5.6rem;
-  width: calc(100% - 21rem);
+  transform: scaleX(1);
+  transform-origin: right;
 }
 
 .form {
@@ -1453,12 +1453,11 @@ img {
 }
 
 .form__field {
-  position: absolute;
-  right: 21rem;
   flex: none;
-  padding: 0;
+  margin-right: 3rem;
+  padding: 0 5.6rem;
   height: 6rem;
-  width: 0;
+  width: calc(100% - 21rem);
   text-transform: uppercase;
   font: inherit;
   font-size: 2.4rem;
@@ -1467,7 +1466,9 @@ img {
   border: 0;
   border-radius: 3rem;
   outline: none;
-  transition: width 0.5s ease-in-out 0.2s, padding 0.3s ease 0.2s;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s linear;
 }
 .form__field:focus {
   border: 1px solid #a67ee5;
@@ -1507,7 +1508,7 @@ img {
 }
 
 .form__button {
-  margin-left: auto;
+  flex-grow: 1;
 }
 @media (orientation: portrait) {
   .form__button {
@@ -1724,7 +1725,7 @@ img {
   display: block;
 }
 
-.screen--intro.active p {
+.screen--intro.active .intro__message {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1837,6 +1838,9 @@ img {
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.27;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.35s ease-in, transform 0.35s ease-in;
 }
 @media (min-width: 2000px) {
   .intro__message {
@@ -1862,9 +1866,6 @@ img {
 }
 .intro__message p {
   margin: 0;
-  opacity: 0;
-  transform: translateY(2rem);
-  transition: opacity 0.35s ease-in, transform 0.35s ease-in;
 }
 @media (min-width: 2000px) {
   .intro__message svg {
@@ -2197,11 +2198,13 @@ img {
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0;
+  left: 0;
+  width: 100%;
   height: 2px;
   background-color: #ffffff;
-  right: 0;
-  transition: width 0.3s ease-out;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s linear;
 }
 @media (max-width: 1024px) and (orientation: portrait) {
   .page-header__menu a::after {
@@ -2218,7 +2221,7 @@ img {
   }
 }
 .page-header__menu a.active::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 .page-header__menu a:hover, .page-header__menu a:focus {
   color: #a67ee5;
@@ -2227,9 +2230,8 @@ img {
 .page-header__menu a:hover::after, .page-header__menu a:focus::after {
   opacity: 1;
   background-color: #a67ee5;
-  left: 0;
-  right: auto;
-  width: 100%;
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .page-header__social {
@@ -3923,6 +3925,7 @@ img {
   background-color: #ffffff;
   border: 2px solid #ffffff;
   z-index: -1;
+  transition: width 0.3s ease-in, height 0.3s ease-in;
 }
 .social-block__toggler svg {
   position: absolute;
@@ -3971,7 +3974,6 @@ img {
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease-in;
 }
 @media (min-width: 2000px) {
   .social-block__list {
@@ -4054,7 +4056,6 @@ img {
   border: 2px solid transparent;
   border-radius: 50%;
   opacity: 0;
-  transition: opacity 0.3s ease-in;
 }
 @media (min-width: 2000px) {
   .social-block__link {
@@ -4076,7 +4077,6 @@ img {
 }
 .social-block__link:hover {
   color: #a67ee5;
-  opacity: 1;
 }
 .social-block__link:focus {
   color: #a67ee5;
@@ -4096,7 +4096,7 @@ img {
   transform: translate(-50%, -50%);
 }
 .social-block__link--fb {
-  transition-delay: 0.1s;
+  transition: opacity 0.3s ease-in 0.1s, color 0.2s ease-in;
 }
 .social-block__link--fb svg {
   width: 0.8rem;
@@ -4109,7 +4109,7 @@ img {
   }
 }
 .social-block__link--insta {
-  transition-delay: 0.2s;
+  transition: opacity 0.3s ease-in 0.2s, color 0.2s ease-in;
 }
 .social-block__link--insta svg {
   width: 1.5rem;
@@ -4122,7 +4122,7 @@ img {
   }
 }
 .social-block__link--vk {
-  transition-delay: 0.3s;
+  transition: opacity 0.3s ease-in 0.3s, color 0.2s ease-in;
 }
 .social-block__link--vk svg {
   width: 1.7rem;
