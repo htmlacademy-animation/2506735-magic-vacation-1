@@ -35,6 +35,9 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.3s linear, transform 0.3s cubic-bezier(0, 0.73, 0.58, 1);
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -177,6 +180,8 @@
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;
@@ -271,6 +276,7 @@
     &.active {
       &::after {
         transform: scaleX(1);
+        transform-origin: left;
       }
     }
 
@@ -291,6 +297,8 @@
 
 .page-header__social {
   margin-left: 4.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in 0.3s;
 
   @media (min-width: $stop-scaling) {
     margin-left: 48px;
