@@ -9,6 +9,7 @@ import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 import states from './modules/states.js';
+import TextAnimationManager from './modules/text-animation-manager.js';
 
 // init modules
 mobileHeight();
@@ -23,3 +24,6 @@ states();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
+
+const textAnimationManager = new TextAnimationManager();
+textAnimationManager.init();
