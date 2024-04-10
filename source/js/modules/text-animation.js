@@ -13,6 +13,8 @@ export default class TextAnimation {
     /** Class to activate an animation */
     this._activeClass = settings.activeClass;
 
+    this.WORD_CONTAINER_CLASS = `animated-word`;
+
     this._animateText();
   }
 
@@ -64,7 +66,7 @@ export default class TextAnimation {
         return fragment;
       }, document.createDocumentFragment());
 
-      wordContainer.classList.add(`animated-word`);
+      wordContainer.classList.add(this.WORD_CONTAINER_CLASS);
 
       wordContainer.appendChild(letterElement);
       parentFragment.appendChild(wordContainer);
