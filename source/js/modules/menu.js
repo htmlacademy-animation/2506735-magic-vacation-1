@@ -18,20 +18,20 @@ export default () => {
 
   for (let i = 0; i < menuLinks.length; i++) {
     const link = menuLinks[i];
-    const pageTo = link.getAttribute(`href`);
+    const pageTo = link.getAttribute(`href`).slice(1);
 
     link.addEventListener(`click`, function (e) {
-      const pageFrom = window.location.hash;
+      const pageFrom = window.location.hash.slice(1);
 
-      if (pageTo === `#prizes` && pageFrom === `#story`) {
+      if (pageTo === `prizes` && pageFrom === `story`) {
         e.preventDefault();
         fillEffect.classList.add(`active`);
-      }
 
-      setTimeout(() => {
-        window.location.href = pageTo;
-        fillEffect.classList.remove(`active`);
-      }, 500);
+        setTimeout(() => {
+          window.location.href = `#${pageTo}`;
+          fillEffect.classList.remove(`active`);
+        }, 500);
+      }
 
       if (window.innerWidth < 1025) {
         header.classList.remove(`page-header--menu-opened`);
