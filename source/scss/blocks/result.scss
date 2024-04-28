@@ -324,6 +324,14 @@
       width: 45rem;
     }
   }
+
+  .result__button {
+    animation: fade-in 0.75s ease;
+
+    > span {
+      animation: roll-in-left 0.75s ease forwards;
+    }
+  }
 }
 
 .screen--result {
