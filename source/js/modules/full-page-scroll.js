@@ -53,17 +53,13 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
-    if (this.activeScreen !== 1) {
-      this.body.classList.remove(`slide-blue-light`);
-      this.body.classList.remove(`slide-blue`);
-    }
+    document.body.setAttribute(`data-screen`, this.screenElements[this.activeScreen].id);
 
     this.screenElements.forEach((screen) => {
       screen.classList.add(`screen--hidden`);
       screen.classList.remove(`active`);
     });
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
-    document.body.setAttribute(`data-screen`, this.screenElements[this.activeScreen].id);
     setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);
     }, 100);
