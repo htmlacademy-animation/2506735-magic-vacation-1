@@ -251,3 +251,107 @@
     }
   }
 }
+
+[data-screen="story"][data-slide="2"] {
+  .social-block__toggler {
+    color: $c-blue-light;
+
+    &:hover,
+    .social-block--active & {
+      color: $c-blue-light;
+    }
+    &:focus {
+      color: $c-blue-light;
+      &::before {
+        border-color: $c-blue-light;
+      }
+    }
+    &:active,
+    &:active:focus {
+      color: $c-light;
+      &::before {
+        width: 100%;
+        height: 100%;
+        background-color: $c-blue-light;
+        border-color: $c-blue-light;
+      }
+    }
+  }
+
+  .social-block__link {
+    @media (max-width: $tablet) and (orientation: portrait) {
+      color: $c-light;
+      background-color: $c-blue-light;
+    }
+    @media (max-width: $mobile) and (orientation: landscape) {
+      color: $c-light;
+      background-color: $c-blue-light;
+    }
+
+    &:hover {
+      color: $c-blue-light;
+    }
+    &:focus {
+      color: $c-blue-light;
+      background-color: $c-light;
+      border-color: $c-blue-light;
+    }
+    &:active,
+    &:active:focus {
+      color: $c-blue-light;
+      background-color: $c-light;
+      border-color: $c-light;
+    }
+  }
+}
+
+[data-screen="story"][data-slide="3"] {
+  .social-block__toggler {
+    color: $c-blue-dark;
+
+    &:hover,
+    .social-block--active & {
+      color: $c-blue-dark;
+    }
+    &:focus {
+      color: $c-blue-dark;
+      &::before {
+        border-color: $c-blue-dark;
+      }
+    }
+    &:active,
+    &:active:focus {
+      color: $c-light;
+      &::before {
+        background-color: $c-blue-dark;
+        border-color: $c-blue-dark;
+      }
+    }
+  }
+
+  .social-block__link {
+    @media (max-width: $tablet) and (orientation: portrait) {
+      color: $c-light;
+      background-color: $c-blue-dark;
+    }
+    @media (max-width: $mobile) and (orientation: landscape) {
+      color: $c-light;
+      background-color: $c-blue-dark;
+    }
+
+    &:hover {
+      color: $c-blue-dark;
+    }
+    &:focus {
+      color: $c-blue-dark;
+      background-color: $c-light;
+      border-color: $c-blue-dark;
+    }
+    &:active,
+    &:active:focus {
+      color: $c-blue-dark;
+      background-color: $c-light;
+      border-color: $c-light;
+    }
+  }
+}

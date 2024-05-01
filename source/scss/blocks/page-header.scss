@@ -314,3 +314,51 @@
     width: 100%;
   }
 }
+
+[data-screen="story"][data-slide="2"] {
+  .page-header__menu a {
+    &::after {
+      background-color: $c-light;
+
+      @media (max-width: $tablet) and (orientation: portrait) {
+        background-color: $c-blue-light;
+      }
+      @media (max-width: $mobile) and (orientation: landscape) {
+        background-color: $c-blue-light;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: $c-blue-light;
+
+      &::after {
+        background-color: $c-blue-light;
+      }
+    }
+  }
+}
+
+[data-screen="story"][data-slide="3"] {
+  .page-header__menu a {
+    &::after {
+      background-color: $c-light;
+
+      @media (max-width: $tablet) and (orientation: portrait) {
+        background-color: $c-blue-dark;
+      }
+      @media (max-width: $mobile) and (orientation: landscape) {
+        background-color: $c-blue-dark;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: $c-blue-dark;
+
+      &::after {
+        background-color: $c-blue-dark;
+      }
+    }
+  }
+}

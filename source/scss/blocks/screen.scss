@@ -54,6 +54,7 @@
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 0 3.6rem 0 0;
+    transition: width 0.3s ease, height 0.3s ease;
 
     &.screen__footer--full {
       width: 100%;
@@ -65,6 +66,7 @@
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 0 3.6rem 0 0;
+    transition: width 0.3s ease, height 0.3s ease;
 
     &.screen__footer--full {
       width: 100%;
@@ -78,17 +80,21 @@
 
   @media (max-width: $tablet) and (orientation: portrait) {
     opacity: 0;
+    transition: opacity 0.3s ease;
 
     .screen__footer--full & {
       opacity: 1;
+      transition: opacity 0.3s ease 0.3s;
     }
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
     opacity: 0;
+    transition: opacity 0.3s ease;
 
     .screen__footer--full & {
       opacity: 1;
+      transition: opacity 0.3s ease 0.3s;
     }
   }
 }
